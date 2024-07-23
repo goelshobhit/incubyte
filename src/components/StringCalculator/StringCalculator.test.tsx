@@ -94,7 +94,7 @@ describe('Form submission', () => {
     });
   });
 
- it('should handle negative numbers', async () => {
+  it('should handle negative numbers', async () => {
     render(<StringCalculator />);
     const number1Input = screen.getByLabelText('Number 1');
     const number2Input = screen.getByLabelText('Number 2');
@@ -113,7 +113,7 @@ describe('Form submission', () => {
 describe('Component rendering', () => {
   it('should render the calculator form', () => {
     render(<StringCalculator />);
-    
+
     expect(screen.getByText('String Calculator')).toBeInTheDocument();
     expect(screen.getByText('Number Sum Calculator')).toBeInTheDocument();
     expect(screen.getByLabelText('Number 1')).toBeInTheDocument();
