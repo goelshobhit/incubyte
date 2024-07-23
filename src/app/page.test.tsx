@@ -1,7 +1,7 @@
 import { render, screen } from '@/tests/test-utils';
 
-import { StringCalculator } from '@/components/StringCalculator';
 import { MainProvider } from '@/components/providers/MainProvider';
+import { StringCalculator } from '@/components/StringCalculator';
 
 import HomePage from './page';
 
