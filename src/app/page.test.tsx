@@ -21,22 +21,22 @@ describe('MainProvider', () => {
   });
 
   it('displays the title correctly', () => {
-    const { getByText } = render(<HomePage />);
-    expect(getByText('Next.js Enterprise Boilerplate')).toBeInTheDocument();
+    render(<HomePage />);
+    expect(screen.getByText('Next.js Enterprise Boilerplate')).toBeInTheDocument();
   });
 
   it('displays the description correctly', () => {
-    const { getByText } = render(<HomePage />);
+    render(<HomePage />);
     expect(
-      getByText(
+      screen.getByText(
         'Boilerplate and Starter for Next.js, Tailwind CSS and TypeScript ⚡️ Made with developer experience first: Next.js, TypeScript, ESLint, Prettier, Husky, Lint-Staged, Jest, React Testing Library, PostCSS, Tailwind CSS, Storybook, Plop, GH actions.'
       )
     ).toBeInTheDocument();
   });
 
   it('verifies styling and classes for features', () => {
-    const { getAllByRole } = render(<HomePage />);
-    const featureItems = getAllByRole('listitem');
+    render(<HomePage />);
+    const featureItems = screen.getAllByRole('listitem');
 
     featureItems.forEach((item) => {
       expect(item).toHaveClass('flex');
