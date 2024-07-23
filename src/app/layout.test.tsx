@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import RootLayout from './layout'; // Adjust the import path as needed
 
 // Mock the dependencies
@@ -25,17 +25,17 @@ describe('RootLayout', () => {
   });
 
   it('renders the MainProvider', () => {
-    const { getByTestId } = render(<RootLayout>Test Content</RootLayout>);
-    expect(getByTestId('main-provider')).toBeTruthy();
+    render(<RootLayout>Test Content</RootLayout>);
+    expect(screen.getByTestId('main-provider')).toBeTruthy();
   });
 
   it('renders the MainLayout', () => {
-    const { getByTestId } = render(<RootLayout>Test Content</RootLayout>);
-    expect(getByTestId('main-layout')).toBeTruthy();
+    render(<RootLayout>Test Content</RootLayout>);
+    expect(screen.getByTestId('main-layout')).toBeTruthy();
   });
 
   it('renders the children content', () => {
-    const { getByText } = render(<RootLayout>Test Content</RootLayout>);
-    expect(getByText('Test Content')).toBeTruthy();
+    render(<RootLayout>Test Content</RootLayout>);
+    expect(screen.getByText('Test Content')).toBeTruthy();
   });
 });
