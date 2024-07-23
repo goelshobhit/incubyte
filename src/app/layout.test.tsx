@@ -5,29 +5,29 @@ import RootLayout from './layout'; // Adjust the import path as needed
 // Mock the dependencies
 jest.mock('next/font/google', () => ({
   Inter: () => ({
-    variable: 'mock-font-class',
-  }),
+    variable: 'mock-font-class'
+  })
 }));
 
 jest.mock('@/components/providers/MainProvider', () => ({
-  MainProvider: ({ children }) => <div data-testid="main-provider">{children}</div>,
+  MainProvider: ({ children }) => <div data-testid="main-provider">{children}</div>
 }));
 
 jest.mock('@/components/templates/MainLayout', () => ({
-  MainLayout: ({ children }) => <div data-testid="main-layout">{children}</div>,
+  MainLayout: ({ children }) => <div data-testid="main-layout">{children}</div>
 }));
 
 jest.mock('@/lib/utils', () => ({
-  cn: (...args) => args.join(' '),
+  cn: (...args) => args.join(' ')
 }));
 
 // Mock useRouter
 jest.mock('next/navigation', () => ({
   useRouter() {
     return {
-      push: jest.fn(),
+      push: jest.fn()
     };
-  },
+  }
 }));
 
 describe('RootLayout', () => {
