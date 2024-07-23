@@ -1,19 +1,22 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import RootLayout from './layout';  // Adjust the import path as needed
-
+import RootLayout from './layout'; // Adjust the import path as needed
 
 // Mock the dependencies
 jest.mock('@/components/providers/MainProvider', () => ({
-  MainProvider: ({ children }: { children: React.ReactNode }) => <div data-testid="main-provider">{children}</div>,
+  MainProvider: ({ children }: { children: React.ReactNode }) => (
+    <div data-testid="main-provider">{children}</div>
+  )
 }));
 
 jest.mock('@/components/templates/MainLayout', () => ({
-  MainLayout: ({ children }: { children: React.ReactNode }) => <div data-testid="main-layout">{children}</div>,
+  MainLayout: ({ children }: { children: React.ReactNode }) => (
+    <div data-testid="main-layout">{children}</div>
+  )
 }));
 
 jest.mock('@/lib/utils', () => ({
-  cn: (...args: string[]) => args.join(' '),
+  cn: (...args: string[]) => args.join(' ')
 }));
 
 describe('RootLayout', () => {

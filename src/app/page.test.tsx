@@ -2,7 +2,7 @@ import { render, screen } from '@/tests/test-utils';
 
 import { MainProvider } from '@/components/providers/MainProvider';
 import HomePage from './page';
-import { StringCalculator } from '@/components/StringCalculator'; 
+import { StringCalculator } from '@/components/StringCalculator';
 
 describe('MainProvider', () => {
   it('should render the children components', () => {
@@ -27,14 +27,18 @@ describe('MainProvider', () => {
 
   it('displays the description correctly', () => {
     const { getByText } = render(<HomePage />);
-    expect(getByText('Boilerplate and Starter for Next.js, Tailwind CSS and TypeScript ⚡️ Made with developer experience first: Next.js, TypeScript, ESLint, Prettier, Husky, Lint-Staged, Jest, React Testing Library, PostCSS, Tailwind CSS, Storybook, Plop, GH actions.')).toBeInTheDocument();
+    expect(
+      getByText(
+        'Boilerplate and Starter for Next.js, Tailwind CSS and TypeScript ⚡️ Made with developer experience first: Next.js, TypeScript, ESLint, Prettier, Husky, Lint-Staged, Jest, React Testing Library, PostCSS, Tailwind CSS, Storybook, Plop, GH actions.'
+      )
+    ).toBeInTheDocument();
   });
 
   it('verifies styling and classes for features', () => {
     const { getAllByRole } = render(<HomePage />);
     const featureItems = getAllByRole('listitem');
-    
-    featureItems.forEach(item => {
+
+    featureItems.forEach((item) => {
       expect(item).toHaveClass('flex');
       expect(item).toHaveClass('text-center');
       expect(item).toHaveClass('hover:scale-105');

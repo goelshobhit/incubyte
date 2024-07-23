@@ -1,4 +1,4 @@
-import { StringCalculator  } from "@/components/StringCalculator";
+import { StringCalculator } from '@/components/StringCalculator';
 const featuresItems = [
   { icon: '🏎️', name: 'Next.js (app routing)' },
   { icon: '🔥', name: 'Type checking TypeScript' },
@@ -33,7 +33,7 @@ const HomePage = () => (
     <section className="bg-white px-4 dark:bg-gray-900">
       <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
         <div className="mx-auto place-self-center">
-        <StringCalculator />
+          <StringCalculator />
         </div>
       </div>
     </section>
