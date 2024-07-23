@@ -3,7 +3,6 @@ import { TextField, Button, Box, Typography, Container, Paper } from '@mui/mater
 import React, { useState } from 'react';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 
-
 type FormInputs = {
   number1: number;
   number2: number;
