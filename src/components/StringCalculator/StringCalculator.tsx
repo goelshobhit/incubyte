@@ -1,7 +1,8 @@
 'use client';
+import { TextField, Button, Box, Typography, Container, Paper } from '@mui/material';
 import React, { useState } from 'react';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
-import { TextField, Button, Box, Typography, Container, Paper } from '@mui/material';
+
 
 type FormInputs = {
   number1: number;

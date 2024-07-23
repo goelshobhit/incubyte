@@ -1,4 +1,5 @@
 import { render, screen } from '@/tests/test-utils';
+
 import { MainProvider } from '@/components/providers/MainProvider';
 
 describe('MainProvider', () => {

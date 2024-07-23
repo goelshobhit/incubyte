@@ -1,8 +1,9 @@
 import { render, screen } from '@/tests/test-utils';
 
-import { MainProvider } from '@/components/providers/MainProvider';
-import HomePage from './page';
 import { StringCalculator } from '@/components/StringCalculator';
+import { MainProvider } from '@/components/providers/MainProvider';
+
+import HomePage from './page';
 
 describe('MainProvider', () => {
   it('should render the children components', () => {
