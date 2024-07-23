@@ -1,6 +1,5 @@
 import { render, screen } from '@/tests/test-utils';
-
-import { MainProvider } from '.';
+import { MainProvider } from '@/components/providers/MainProvider';
 
 describe('MainProvider', () => {
   it('should render the children components', () => {
