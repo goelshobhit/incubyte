@@ -34,15 +34,33 @@ describe('Input validation', () => {
     expect(number1Input).toHaveValue(null);
   });
 
-  it('should handle minimum and maximum values', async () => {
+  it('should handle minimum and maximum safe integer values', async () => {
     render(<StringCalculator />);
     const number1Input = screen.getByLabelText('Number 1');
 
-    await userEvent.type(number1Input, '-9999999999999999');
-    expect(number1Input).toHaveValue(-9999999999999999);
+    // Test minimum safe integer
+    await userEvent.type(number1Input, String(Number.MIN_SAFE_INTEGER));
+    expect(number1Input).toHaveValue(Number.MIN_SAFE_INTEGER);
 
     await userEvent.clear(number1Input);
-    await userEvent.type(number1Input, '9999999999999999');
-    expect(number1Input).toHaveValue(9999999999999999);
+
+    // Test maximum safe integer
+    await userEvent.type(number1Input, String(Number.MAX_SAFE_INTEGER));
+    expect(number1Input).toHaveValue(Number.MAX_SAFE_INTEGER);
+  });
+
+  it('should handle values beyond safe integer range', async () => {
+    render(<StringCalculator />);
+    const number1Input = screen.getByLabelText('Number 1');
+
+    // Test a value slightly beyond MAX_SAFE_INTEGER
+    await userEvent.type(number1Input, '9007199254740992'); // 2^53
+    expect(number1Input).toHaveValue(9007199254740992);
+
+    await userEvent.clear(number1Input);
+
+    // Test a value slightly beyond MIN_SAFE_INTEGER
+    await userEvent.type(number1Input, '-9007199254740992'); // -2^53
+    expect(number1Input).toHaveValue(-9007199254740992);
   });
 });
