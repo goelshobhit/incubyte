@@ -25,11 +25,17 @@
   },
   "packageManager": "pnpm@9.1.1+sha256.9551e803dcb7a1839fdf5416153a844060c7bce013218ce823410532504ac10b",
   "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^5.16.4",
+    "@mui/styled-engine-sc": "6.0.0-alpha.18",
     "@t3-oss/env-nextjs": "0.10.1",
     "clsx": "2.1.1",
     "next": "14.2.5",
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "react-hook-form": "^7.52.1",
+    "styled-components": "^6.1.12",
     "tailwind-merge": "2.4.0",
     "zod": "3.23.8"
   },
